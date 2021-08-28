@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bussines.Abstract;
+using Bussines.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete.Contexts;
 using DataAccess.Concrete.EntityFramework;
@@ -33,7 +35,7 @@ namespace WebAPI
             services.AddDbContext<ECommerceWebAPIContext>(opt => opt.UseSqlServer("Data Source =.\\SQLEXPRESS; Initial Catalog = " +
                 "ECommerceWebAPIDb; Integrated Security = True", options=>options.MigrationsAssembly("DataAccess").MigrationsHistoryTable(HistoryRepository.DefaultTableName, "dbo")));
             services.AddTransient<IUserDal, EfUserDal>();
-            //services.AddTransient<IUserService,UserService>();
+            services.AddTransient<IUserService,UserService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
