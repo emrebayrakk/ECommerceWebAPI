@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussines", "Bussines\Bussines.csproj", "{51CEE7A4-4B74-4454-8223-90CF6D4E359A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bussines", "Bussines\Bussines.csproj", "{51CEE7A4-4B74-4454-8223-90CF6D4E359A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{24243993-7817-4EB2-AA6D-92B6213329D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{24243993-7817-4EB2-AA6D-92B6213329D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{61235741-65F8-459F-8088-58ACADC5515C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{61235741-65F8-459F-8088-58ACADC5515C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{97A5BEF2-8FE8-421D-899E-FCCD6FDC3F57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{97A5BEF2-8FE8-421D-899E-FCCD6FDC3F57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIWindowsForm", "WebAPIWindowsForm\WebAPIWindowsForm.csproj", "{3C37F501-E0F7-43B1-BD46-8D749442495B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPICoreMvc", "WebAPICoreMvc\WebAPICoreMvc.csproj", "{693A85AF-EF71-4D1C-9A71-69A393B1C780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPICoreMvc", "WebAPICoreMvc\WebAPICoreMvc.csproj", "{693A85AF-EF71-4D1C-9A71-69A393B1C780}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIWindowsForm", "WebAPIWindowsForm\WebAPIWindowsForm.csproj", "{E9A6F3F1-C4DA-4398-984F-AD1710DE2BB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,14 @@ Global
 		{97A5BEF2-8FE8-421D-899E-FCCD6FDC3F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97A5BEF2-8FE8-421D-899E-FCCD6FDC3F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97A5BEF2-8FE8-421D-899E-FCCD6FDC3F57}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C37F501-E0F7-43B1-BD46-8D749442495B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C37F501-E0F7-43B1-BD46-8D749442495B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C37F501-E0F7-43B1-BD46-8D749442495B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C37F501-E0F7-43B1-BD46-8D749442495B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{693A85AF-EF71-4D1C-9A71-69A393B1C780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{693A85AF-EF71-4D1C-9A71-69A393B1C780}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{693A85AF-EF71-4D1C-9A71-69A393B1C780}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{693A85AF-EF71-4D1C-9A71-69A393B1C780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A6F3F1-C4DA-4398-984F-AD1710DE2BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A6F3F1-C4DA-4398-984F-AD1710DE2BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A6F3F1-C4DA-4398-984F-AD1710DE2BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A6F3F1-C4DA-4398-984F-AD1710DE2BB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
