@@ -107,11 +107,39 @@ namespace WebAPICoreMvc.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var user = await _httpClient.GetFromJsonAsync<UserDto>(url + "Users/GetById/" + id);
+            UserDeleteViewModel userDeleteViewModel = new UserDeleteViewModel()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                GenderName = user.Gender == true ? "Erkek" : "Kadın",
+                Address = user.Address,
+                DateOfBirth = user.DateOfBirth,
+                Password = user.Password,
+                UserName = user.UserName,
+                Email = user.Email,
+            };
+            ViewBag.GenderList = GenderFill();
+            return View(userDeleteViewModel);
+        }
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _httpClient.DeleteAsync(url + "Users/Delete/" + id);
+            return RedirectToAction("Index");
+
+            
+            
+        }
+
         #endregion
 
-        #region Methods
+            #region Methods
 
-        private List<Gender> GenderFill()
+            private List<Gender> GenderFill()
         {
             List<Gender> genders = new List<Gender>();
             genders.Add(new Gender(){Id=1 , GenderName="Erkek"});
