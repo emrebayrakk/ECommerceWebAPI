@@ -28,6 +28,8 @@ namespace WebAPICoreMvc.Controllers
 
         #endregion
 
+        #region CRUD
+
         public async Task<IActionResult> Index()
         {
             var users = await _httpClient.GetFromJsonAsync<List<UserDetailDto>>(url+"Users/GetList");
@@ -62,6 +64,52 @@ namespace WebAPICoreMvc.Controllers
 
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
+        {
+            var user = await _httpClient.GetFromJsonAsync<UserDto>(url + "Users/GetById/"+id);
+            UserUpdateViewModel userUpdateViewModel = new UserUpdateViewModel()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                GenderID = user.Gender == true ? 1 : 2,
+                Address = user.Address,
+                DateOfBirth = user.DateOfBirth,
+                Password = user.Password,
+                UserName = user.UserName,
+                Email = user.Email,
+            };
+            ViewBag.GenderList = GenderFill();
+            return View(userUpdateViewModel);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, UserUpdateViewModel userUpdateViewModel)
+        {
+            
+            UserUpdateDto userUpdateDto = new UserUpdateDto()
+            {
+                FirstName = userUpdateViewModel.FirstName,
+                LastName = userUpdateViewModel.LastName,
+                Gender = userUpdateViewModel.GenderID == 1 ? true : false,
+                Address = userUpdateViewModel.Address,
+                DateOfBirth = userUpdateViewModel.DateOfBirth,
+                Password = userUpdateViewModel.Password,
+                UserName = userUpdateViewModel.UserName,
+                Email = userUpdateViewModel.Email,
+                Id = id,
+            };
+            HttpResponseMessage httpResponseMessage = await _httpClient.PutAsJsonAsync(url + "Users/Update", userUpdateDto);
+            if (httpResponseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+
+            }
+            return View();
+        }
+
+        #endregion
+
+        #region Methods
 
         private List<Gender> GenderFill()
         {
@@ -75,5 +123,7 @@ namespace WebAPICoreMvc.Controllers
             public int Id { get; set; }
             public string GenderName { get; set; }
         }
+
+        #endregion
     }
 }
