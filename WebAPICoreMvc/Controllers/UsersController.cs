@@ -48,7 +48,7 @@ namespace WebAPICoreMvc.Controllers
             {
                 FirstName= userAddViewModel.FirstName,
                 LastName= userAddViewModel.LastName,
-                Gender = userAddViewModel.GenderID == 1 ? true : false,
+                Gender = userAddViewModel.GenderID == 1,
                 Address= userAddViewModel.Address,
                 DateOfBirth = userAddViewModel.DateOfBirth,
                 Password = userAddViewModel.Password,
@@ -90,7 +90,7 @@ namespace WebAPICoreMvc.Controllers
             {
                 FirstName = userUpdateViewModel.FirstName,
                 LastName = userUpdateViewModel.LastName,
-                Gender = userUpdateViewModel.GenderID == 1 ? true : false,
+                Gender = userUpdateViewModel.GenderID == 1,
                 Address = userUpdateViewModel.Address,
                 DateOfBirth = userUpdateViewModel.DateOfBirth,
                 Password = userUpdateViewModel.Password,
