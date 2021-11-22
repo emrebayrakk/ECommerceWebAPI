@@ -14,7 +14,7 @@ namespace WebAPICoreMvc.Controllers
         #region Define
 
         private readonly HttpClient _httpClient;
-        private string url= "http://localhost:28493/api/";
+        private readonly string url= "http://localhost:28493/api/";
 
 
         #endregion
@@ -44,7 +44,7 @@ namespace WebAPICoreMvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(UserAddViewModel userAddViewModel)
         {
-            UserAddDto userAddDto = new UserAddDto()
+            var userAddDto = new UserAddDto()
             {
                 FirstName= userAddViewModel.FirstName,
                 LastName= userAddViewModel.LastName,
@@ -68,7 +68,7 @@ namespace WebAPICoreMvc.Controllers
         public async Task<IActionResult> Update(int id)
         {
             var user = await _httpClient.GetFromJsonAsync<UserDto>(url + "Users/GetById/"+id);
-            UserUpdateViewModel userUpdateViewModel = new UserUpdateViewModel()
+            var userUpdateViewModel = new UserUpdateViewModel()
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
@@ -86,7 +86,7 @@ namespace WebAPICoreMvc.Controllers
         public async Task<IActionResult> Update(int id, UserUpdateViewModel userUpdateViewModel)
         {
             
-            UserUpdateDto userUpdateDto = new UserUpdateDto()
+            var userUpdateDto = new UserUpdateDto()
             {
                 FirstName = userUpdateViewModel.FirstName,
                 LastName = userUpdateViewModel.LastName,
@@ -111,7 +111,7 @@ namespace WebAPICoreMvc.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var user = await _httpClient.GetFromJsonAsync<UserDto>(url + "Users/GetById/" + id);
-            UserDeleteViewModel userDeleteViewModel = new UserDeleteViewModel()
+            var userDeleteViewModel = new UserDeleteViewModel()
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
@@ -139,14 +139,17 @@ namespace WebAPICoreMvc.Controllers
 
             #region Methods
 
-            private List<Gender> GenderFill()
+            private static List<Gender> GenderFill()
         {
-            List<Gender> genders = new List<Gender>();
-            genders.Add(new Gender(){Id=1 , GenderName="Erkek"});
-            genders.Add(new Gender(){Id=1 , GenderName="Kadın"});
+            var genders = new List<Gender>
+            {
+                new Gender() { Id = 1, GenderName = "Erkek" },
+                new Gender() { Id = 1, GenderName = "Kadın" }
+            };
             return genders;
         }
-        class Gender
+
+            private class Gender
         {
             public int Id { get; set; }
             public string GenderName { get; set; }
