@@ -11,11 +11,11 @@ namespace DataAccess.Concrete.Contexts
 {
     public class ECommerceWebAPIContext:DbContext
     {
-        public ECommerceWebAPIContext(DbContextOptions<ECommerceWebAPIContext> options):base(options)
-        {
-            
-        }
 
+        public ECommerceWebAPIContext(DbContextOptions<ECommerceWebAPIContext> options) : base(options)
+        {
+
+        }
         public ECommerceWebAPIContext()
         {
             
@@ -23,7 +23,7 @@ namespace DataAccess.Concrete.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connString= "Data Source =.\\SQLEXPRESS; Initial Catalog = ECommerceWebAPIDb; Integrated Security = True";
+            string connString= "Server=EMRE;Database=ECommerceWebAPIDb;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connString);
         }
 

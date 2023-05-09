@@ -4,14 +4,16 @@ using DataAccess.Concrete.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ECommerceWebAPIContext))]
-    partial class ECommerceWebAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20230509094756_mg2")]
+    partial class mg2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
